@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سويت هوم - Sweet Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body>
+    <!-- شريط الإعلانات العلوي -->
+    <div class="top-banner">
+        <div class="marquee">
+            <span>🔥 عروض حصرية - خصومات تصل لـ 50% على الأجهزة المنزلية</span>
+            <span>🚚 شحن مجاني للطلبات أكتر من 1000 جنيه</span>
+            <span>⭐ ضمان أفضل سعر في السوق</span>
+        </div>
+    </div>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="header-top">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> اتصل بينا: 01025744780</span>
+                <span><i class="fas fa-clock"></i> خدمة العملا 24 ساعة</span>
+            </div>
+            <div class="user-actions">
+                <a href="login.html"><i class="fas fa-user"></i> دخول</a>
+                <span>|</span>
+                <a href="register.html"><i class="fas fa-user-plus"></i> حساب جديد</a>
+                <a href="profile.html"><i class="fas fa-user-plus"></i> الملف الشخصي</a>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="سويت هوم">
+                </a>
+            </div>
+            <div class="search-bar">
+                <form action="/search" method="get">
+                    <input type="text" placeholder="دور على اللي نفسك فيه...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="cart-favorites-container">
+                <div class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                <div class="favorites-icon">
+                    <a href="favorites.html">
+                        <i class="far fa-heart"></i>
+                        <span class="favorites-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <button class="floating-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- إضافة عنصر التعتيم -->
+    <div class="menu-overlay"></div>
+    
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li class="dropdown">
+                <a href="products.html">الأقسام</a>
+                <div class="dropdown-content">
+                    <a href="bedroom-accessories.html">أدوات غرفة النوم</a>
+                    <a href="home-appliances.html">الأجهزة المنزلية</a>
+                    <a href="cleaning-tools.html">أدوات التنظيف</a>
+                    <a href="kitchen-tools.html">أدوات المطبخ</a>
+                    <a href="lighting.html">الإضاءة</a>
+                    <a href="furniture.html">الأثاث</a>
+                </div>
+            </li>
+            <li><a href="warranty.html">الضمان</a></li>
+            <li><a href="contact.html">انضم إلينا</a></li>
+            <li><a href="support.html">مركز المساعدة</a></li>
+        </ul>
+    </nav>
+    <style>
+        .digital-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .digital-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .digital-header h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .digital-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .digital-main-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .digital-section {
+            margin-bottom: 40px;
+        }
+
+        .digital-section h2 {
+            color: #e60000;
+            border-bottom: 2px solid #e60000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .technology-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .technology-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .technology-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .technology-card i {
+            font-size: 48px;
+            color: #e60000;
+            margin-bottom: 15px;
+        }
+
+        .technology-card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .digital-impact {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .impact-grid {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .impact-item {
+            flex: 1;
+            padding: 15px;
+        }
+
+        .impact-item i {
+            color: #e60000;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .impact-item h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .impact-item p {
+            color: #666;
+        }
+
+        .digital-sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            height: fit-content;
+        }
+
+        .digital-services {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .digital-services h3 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e60000;
+            padding-bottom: 10px;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .service-item i {
+            color: #e60000;
+            margin-left: 15px;
+            font-size: 24px;
+        }
+
+        .service-details h4 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .service-details p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .digital-roadmap {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .digital-roadmap h3 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e60000;
+            padding-bottom: 10px;
+        }
+
+        .roadmap-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .roadmap-item i {
+            color: #e60000;
+            margin-left: 10px;
+        }
+
+        .get-digital {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .get-digital h3 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e60000;
+            padding-bottom: 10px;
+        }
+
+        .digital-btn {
+            background: #e60000;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .digital-btn:hover {
+            background: #cc0000;
+        }
+
+        .contact-digital {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-digital h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .contact-btn {
+            background: #e60000;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #cc0000;
+        }
+
+        @media (max-width: 1024px) {
+            .digital-content {
+                grid-template-columns: 1fr;
+            }
+
+            .technology-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .impact-grid {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .technology-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="digital-container">
+            <div class="digital-header">
+                <h1>التحول الرقمي</h1>
+                <p>نقود مستقبل التكنولوجيا والابتكار</p>
+            </div>
+
+            <div class="digital-content">
+                <div class="digital-main-content">
+                    <div class="digital-section">
+                        <h2>التقنيات الرقمية</h2>
+                        <div class="technology-grid">
+                            <div class="technology-card">
+                                <i class="fas fa-robot"></i>
+                                <h3>الذكاء الاصطناعي</h3>
+                                <p>حلول ذكية متطورة</p>
+                            </div>
+                            <div class="technology-card">
+                                <i class="fas fa-cloud"></i>
+                                <h3>الحوسبة السحابية</h3>
+                                <p>تخزين وإدارة البيانات</p>
+                            </div>
+                            <div class="technology-card">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h3>التطبيقات الذكية</h3>
+                                <p>تجربة مستخدم متكاملة</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="digital-section">
+                        <h2>تأثير التحول الرقمي</h2>
+                        <div class="digital-impact">
+                            <div class="impact-grid">
+                                <div class="impact-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <h3>200%</h3>
+                                    <p>زيادة الكفاءة</p>
+                                </div>
+                                <div class="impact-item">
+                                    <i class="fas fa-users"></i>
+                                    <h3>50,000+</h3>
+                                    <p>مستخدم رقمي</p>
+                                </div>
+                                <div class="impact-item">
+                                    <i class="fas fa-trophy"></i>
+                                    <h3>10</h3>
+                                    <p>جوائز رقمية</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="digital-section">
+                        <h2>مجالات التحول الرقمي</h2>
+                        <div class="technology-grid">
+                            <div class="technology-card">
+                                <i class="fas fa-shopping-cart"></i>
+                                <h3>التجارة الإلكترونية</h3>
+                                <p>منصات تسوق متطورة</p>
+                            </div>
+                            <div class="technology-card">
+                                <i class="fas fa-headset"></i>
+                                <h3>خدمة العملاء</h3>
+                                <p>دعم رقمي متكامل</p>
+                            </div>
+                            <div class="technology-card">
+                                <i class="fas fa-chart-pie"></i>
+                                <h3>التحليلات الذكية</h3>
+                                <p>رؤى وتوقعات دقيقة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="digital-sidebar">
+                    <div class="digital-services">
+                        <h3>الخدمات الرقمية</h3>
+                        <div class="service-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div class="service-details">
+                                <h4>تطبيق سويت هوم</h4>
+                                <p>تحكم كامل بالمنزل</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-shopping-bag"></i>
+                            <div class="service-details">
+                                <h4>متجر إلكتروني</h4>
+                                <p>تسوق سهل وآمن</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="digital-roadmap">
+                        <h3>خارطة التحول الرقمي</h3>
+                        <div class="roadmap-item">
+                            <i class="fas fa-check"></i>
+                            <p>التحليل والتخطيط</p>
+                        </div>
+                        <div class="roadmap-item">
+                            <i class="fas fa-check"></i>
+                            <p>التنفيذ والتطوير</p>
+                        </div>
+                    </div>
+
+                    <div class="get-digital">
+                        <h3>استكشف عالمنا الرقمي</h3>
+                        <p>انضم إلى ثورة التكنولوجيا</p>
+                        <button class="digital-btn">
+                            <i class="fas fa-rocket"></i>
+                            ابدأ الآن
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-digital">
+                <h3>هل تريد معرفة المزيد عن التحول الرقمي؟</h3>
+                <a href="#" class="contact-btn">
+                    <i class="fas fa-envelope"></i>
+                    تواصل معنا
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // زر البدء في التحول الرقمي
+        document.querySelector('.digital-btn').addEventListener('click', function() {
+            alert('شكرًا لاهتمامك بالتحول الرقمي. سنتواصل معك قريبًا');
+        });
+
+        // زر التواصل
+        document.querySelector('.contact-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('سيتم توجيهك إلى صفحة التواصل');
+        });
+    </script>
+</body>
+</html>
+</section>
+</section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>عن سويت هوم</h3>
+                <p>أكبر متجر للأدوات المنزلية في مصر</p>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@wx33693" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/wx33693" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/0WX33693" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/wx33_6/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="warranty.html">الضمان وخدمة ما بعد البيع</a></li>
+                    <li><a href="terms-conditions.html">الشروط والأحكام</a></li>
+                    <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="social-responsibility.html">المسؤولية الاجتماعية</a></li>
+                    <li><a href="careers.html">انضم إلينا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="innovation.html">الابتكار والتكنولوجيا</a></li>
+                    <li><a href="partnerships.html">الشراكات والتعاون</a></li>
+                    <li><a href="community-responsibility.html">المسؤولية المجتمعية</a></li>
+                    <li><a href="research-and-development.html">البحث والتطوير</a></li>
+                    <li><a href="digital-transformation.html">التحول الرقمي</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>خدمة العملاء</h3>
+                <ul>
+                    <li><a href="returns-exchange-policy.html">سياسة الإرجاع والاستبدال</a></li>
+                    <li><a href="shipping-policy.html">سياسة الشحن</a></li>
+                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>النشرة البريدية</h3>
+                <p>اشترك علشان توصلك أحدث العروض</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="اكتب إيميلك هنا">
+                    <button type="submit">اشترك</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+        <div class="disclaimer">
+            <p>هذا مجرد مشروع تخرج ولا صله له باي مؤسسه او منشاه باي شكل من الاشكال واي نوع من المنتجات المعروضه به لا يتم استغلالها او استغلال اسم شركتها باي شكل نهائيا.</p>
+            <h4>اسماء المشاركين في المشروع 2024/2025</h4>
+            <ul>
+                <li>مسؤول الاكواد والبرمجه محمد يسري عبد العظيم </li>
+                <li>مسؤول الصور والمونتاج عمرو محمود مصطفى 
+                </li>
+                <li>مسؤول تصفيه البيانات محمد محروس ناصر</li>
+                <li>مسؤول الدعم العام محمد اشرف سعيد</li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة © 2024 سويت هوم</p>
+        </div>
+    </footer>
+
+    <div class="menu-overlay"></div>
+    <script src="script.js"></script>
+    <script src="js/cart-favorites.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/dark-mode.js"></script>
+
+    <!-- بوت المساعدة -->
+    <div class="chat-bot">
+        <button class="chat-bot-toggle" aria-label="فتح المساعد">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>مساعد سويت هوم</h3>
+                <button class="close-chat" aria-label="إغلاق المساعد">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages">
+                <div class="message bot">
+                    مرحباً بك في سويت هوم! كيف يمكنني مساعدتك اليوم؟ 😊
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="اكتب سؤالك هنا..." aria-label="رسالتك">
+                <button class="send-message" aria-label="إرسال">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

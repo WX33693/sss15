@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سويت هوم - Sweet Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body>
+    <!-- شريط الإعلانات العلوي -->
+    <div class="top-banner">
+        <div class="marquee">
+            <span>🔥 عروض حصرية - خصومات تصل لـ 50% على الأجهزة المنزلية</span>
+            <span>🚚 شحن مجاني للطلبات أكتر من 1000 جنيه</span>
+            <span>⭐ ضمان أفضل سعر في السوق</span>
+        </div>
+    </div>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="header-top">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> اتصل بينا: 01025744780</span>
+                <span><i class="fas fa-clock"></i> خدمة العملا 24 ساعة</span>
+            </div>
+            <div class="user-actions">
+                <a href="login.html"><i class="fas fa-user"></i> دخول</a>
+                <span>|</span>
+                <a href="register.html"><i class="fas fa-user-plus"></i> حساب جديد</a>
+                <a href="profile.html"><i class="fas fa-user-plus"></i> الملف الشخصي</a>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="سويت هوم">
+                </a>
+            </div>
+            <div class="search-bar">
+                <form action="/search" method="get">
+                    <input type="text" placeholder="دور على اللي نفسك فيه...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="cart-favorites-container">
+                <div class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                <div class="favorites-icon">
+                    <a href="favorites.html">
+                        <i class="far fa-heart"></i>
+                        <span class="favorites-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <button class="floating-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- إضافة عنصر التعتيم -->
+    <div class="menu-overlay"></div>
+    
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li class="dropdown">
+                <a href="products.html">الأقسام</a>
+                <div class="dropdown-content">
+                    <a href="bedroom-accessories.html">أدوات غرفة النوم</a>
+                    <a href="home-appliances.html">الأجهزة المنزلية</a>
+                    <a href="cleaning-tools.html">أدوات التنظيف</a>
+                    <a href="kitchen-tools.html">أدوات المطبخ</a>
+                    <a href="lighting.html">الإضاءة</a>
+                    <a href="furniture.html">الأثاث</a>
+                </div>
+            </li>
+            <li><a href="warranty.html">الضمان</a></li>
+            <li><a href="contact.html">انضم إلينا</a></li>
+            <li><a href="support.html">مركز المساعدة</a></li>
+        </ul>
+    </nav>
+    <style>
+        .careers-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .careers-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .careers-header h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .careers-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .job-listings {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .job-section {
+            margin-bottom: 30px;
+        }
+
+        .job-section h2 {
+            color: #e60000;
+            border-bottom: 2px solid #e60000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .job-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .job-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .job-type {
+            background: #e60000;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .job-details {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+        }
+
+        .job-apply {
+            background: #e60000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .job-apply:hover {
+            background: #cc0000;
+        }
+
+        .careers-sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            height: fit-content;
+        }
+
+        .why-work-here {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .why-work-here h3 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e60000;
+            padding-bottom: 10px;
+        }
+
+        .work-benefit {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .work-benefit i {
+            color: #e60000;
+            margin-left: 15px;
+            font-size: 24px;
+        }
+
+        .company-culture {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .company-culture h3 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e60000;
+            padding-bottom: 10px;
+        }
+
+        .culture-value {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .culture-value i {
+            color: #e60000;
+            margin-left: 10px;
+        }
+
+        .job-search {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .job-search input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .job-search button {
+            background: #e60000;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .contact-careers {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-careers h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .contact-btn {
+            background: #e60000;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #cc0000;
+        }
+
+        @media (max-width: 1024px) {
+            .careers-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .job-header {
+                flex-direction: column;
+                align-items: start;
+            }
+
+            .job-type {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="careers-container">
+            <div class="careers-header">
+                <h1>انضم إلى فريق سويت هوم</h1>
+                <p>نبحث عن المواهب المتميزة لنكمل رحلة النجاح معًا</p>
+            </div>
+
+            <div class="job-search">
+                <input type="text" placeholder="ابحث عن وظيفة">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="careers-content">
+                <div class="job-listings">
+                    <div class="job-section">
+                        <h2>الوظائف الشاغرة</h2>
+                        
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3 class="job-title">مدير مبيعات</h3>
+                                <span class="job-type">دوام كامل</span>
+                            </div>
+                            <div class="job-details">
+                                <p>القاهرة، مصر</p>
+                                <button class="job-apply">تقدم الآن</button>
+                            </div>
+                        </div>
+
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3 class="job-title">مهندس تطوير برمجيات</h3>
+                                <span class="job-type">دوام كامل</span>
+                            </div>
+                            <div class="job-details">
+                                <p>القاهرة، مصر</p>
+                                <button class="job-apply">تقدم الآن</button>
+                            </div>
+                        </div>
+
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3 class="job-title">مسؤول خدمة عملاء</h3>
+                                <span class="job-type">دوام جزئي</span>
+                            </div>
+                            <div class="job-details">
+                                <p>القاهرة، مصر</p>
+                                <button class="job-apply">تقدم الآن</button>
+                            </div>
+                        </div>
+
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3 class="job-title">متخصص تسويق رقمي</h3>
+                                <span class="job-type">دوام كامل</span>
+                            </div>
+                            <div class="job-details">
+                                <p>القاهرة، مصر</p>
+                                <button class="job-apply">تقدم الآن</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="careers-sidebar">
+                    <div class="why-work-here">
+                        <h3>لماذا العمل معنا</h3>
+                        <div class="work-benefit">
+                            <i class="fas fa-chart-line"></i>
+                            <p>فرص نمو وتطوير مهني</p>
+                        </div>
+                        <div class="work-benefit">
+                            <i class="fas fa-users"></i>
+                            <p>بيئة عمل تعاونية وودية</p>
+                        </div>
+                        <div class="work-benefit">
+                            <i class="fas fa-medal"></i>
+                            <p>حوافز ومكافآت تنافسية</p>
+                        </div>
+                    </div>
+
+                    <div class="company-culture">
+                        <h3>قيمنا الأساسية</h3>
+                        <div class="culture-value">
+                            <i class="fas fa-check"></i>
+                            <p>الابتكار والإبداع</p>
+                        </div>
+                        <div class="culture-value">
+                            <i class="fas fa-check"></i>
+                            <p>الشفافية والنزاهة</p>
+                        </div>
+                        <div class="culture-value">
+                            <i class="fas fa-check"></i>
+                            <p>العمل الجماعي</p>
+                        </div>
+                        <div class="culture-value">
+                            <i class="fas fa-check"></i>
+                            <p>التركيز على العملاء</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-careers">
+                <h3>هل لديك استفسارات حول الوظائف؟</h3>
+                <a href="#" class="contact-btn">
+                    <i class="fas fa-envelope"></i>
+                    تواصل مع إدارة الموارد البشرية
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // تفعيل زر التقديم للوظائف
+        document.querySelectorAll('.job-apply').forEach(button => {
+            button.addEventListener('click', function() {
+                const jobTitle = this.closest('.job-card').querySelector('.job-title').textContent;
+                alert(`شكرًا لاهتمامك بوظيفة ${jobTitle}. سيتم توجيهك لصفحة التقديم`);
+            });
+        });
+
+        // البحث عن الوظائف
+        document.querySelector('.job-search button').addEventListener('click', function() {
+            const searchTerm = document.querySelector('.job-search input').value.toLowerCase();
+            const jobCards = document.querySelectorAll('.job-card');
+
+            jobCards.forEach(card => {
+                const jobTitle = card.querySelector('.job-title').textContent.toLowerCase();
+                
+                if (jobTitle.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // زر التواصل
+        document.querySelector('.contact-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('سيتم توجيهك إلى قسم الموارد البشرية');
+        });
+    </script>
+</body>
+</html>
+</section>
+</section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>عن سويت هوم</h3>
+                <p>أكبر متجر للأدوات المنزلية في مصر</p>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@wx33693" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/wx33693" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/0WX33693" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/wx33_6/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="warranty.html">الضمان وخدمة ما بعد البيع</a></li>
+                    <li><a href="terms-conditions.html">الشروط والأحكام</a></li>
+                    <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="social-responsibility.html">المسؤولية الاجتماعية</a></li>
+                    <li><a href="careers.html">انضم إلينا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="innovation.html">الابتكار والتكنولوجيا</a></li>
+                    <li><a href="partnerships.html">الشراكات والتعاون</a></li>
+                    <li><a href="community-responsibility.html">المسؤولية المجتمعية</a></li>
+                    <li><a href="research-and-development.html">البحث والتطوير</a></li>
+                    <li><a href="digital-transformation.html">التحول الرقمي</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>خدمة العملاء</h3>
+                <ul>
+                    <li><a href="returns-exchange-policy.html">سياسة الإرجاع والاستبدال</a></li>
+                    <li><a href="shipping-policy.html">سياسة الشحن</a></li>
+                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>النشرة البريدية</h3>
+                <p>اشترك علشان توصلك أحدث العروض</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="اكتب إيميلك هنا">
+                    <button type="submit">اشترك</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+        <div class="disclaimer">
+            <p>هذا مجرد مشروع تخرج ولا صله له باي مؤسسه او منشاه باي شكل من الاشكال واي نوع من المنتجات المعروضه به لا يتم استغلالها او استغلال اسم شركتها باي شكل نهائيا.</p>
+            <h4>اسماء المشاركين في المشروع 2024/2025</h4>
+            <ul>
+                <li>مسؤول الاكواد والبرمجه محمد يسري عبد العظيم </li>
+                <li>مسؤول الصور والمونتاج عمرو محمود مصطفى 
+                </li>
+                <li>مسؤول تصفيه البيانات محمد محروس ناصر</li>
+                <li>مسؤول الدعم العام محمد اشرف سعيد</li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة © 2024 سويت هوم</p>
+        </div>
+    </footer>
+
+    <div class="menu-overlay"></div>
+    <script src="script.js"></script>
+    <script src="js/cart-favorites.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/dark-mode.js"></script>
+
+    <!-- بوت المساعدة -->
+    <div class="chat-bot">
+        <button class="chat-bot-toggle" aria-label="فتح المساعد">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>مساعد سويت هوم</h3>
+                <button class="close-chat" aria-label="إغلاق المساعد">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages">
+                <div class="message bot">
+                    مرحباً بك في سويت هوم! كيف يمكنني مساعدتك اليوم؟ 😊
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="اكتب سؤالك هنا..." aria-label="رسالتك">
+                <button class="send-message" aria-label="إرسال">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

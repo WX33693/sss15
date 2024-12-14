@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سويت هوم - Sweet Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+</head>
+<body>
+    <!-- شريط الإعلانات العلوي -->
+    <div class="top-banner">
+        <div class="marquee">
+            <span>🔥 عروض حصرية - خصومات تصل لـ 50% على الأجهزة المنزلية</span>
+            <span>🚚 شحن مجاني للطلبات أكتر من 1000 جنيه</span>
+            <span>⭐ ضمان أفضل سعر في السوق</span>
+        </div>
+    </div>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="header-top">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> اتصل بينا: 01025744780</span>
+                <span><i class="fas fa-clock"></i> خدمة العملا 24 ساعة</span>
+            </div>
+            <div class="user-actions">
+                <a href="login.html"><i class="fas fa-user"></i> دخول</a>
+                <span>|</span>
+                <a href="register.html"><i class="fas fa-user-plus"></i> حساب جديد</a>
+                <a href="profile.html"><i class="fas fa-user-plus"></i> الملف الشخصي</a>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="سويت هوم">
+                </a>
+            </div>
+            <div class="search-bar">
+                <form action="/search" method="get">
+                    <input type="text" placeholder="دور على اللي نفسك فيه...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="cart-favorites-container">
+                <div class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                <div class="favorites-icon">
+                    <a href="favorites.html">
+                        <i class="far fa-heart"></i>
+                        <span class="favorites-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <button class="floating-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- إضافة عنصر التعتيم -->
+    <div class="menu-overlay"></div>
+    
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li class="dropdown">
+                <a href="products.html">الأقسام</a>
+                <div class="dropdown-content">
+                    <a href="bedroom-accessories.html">أدوات غرفة النوم</a>
+                    <a href="home-appliances.html">الأجهزة المنزلية</a>
+                    <a href="cleaning-tools.html">أدوات التنظيف</a>
+                    <a href="kitchen-tools.html">أدوات المطبخ</a>
+                    <a href="lighting.html">الإضاءة</a>
+                    <a href="furniture.html">الأثاث</a>
+                </div>
+            </li>
+            <li><a href="warranty.html">الضمان</a></li>
+            <li><a href="contact.html">انضم إلينا</a></li>
+            <li><a href="support.html">مركز المساعدة</a></li>
+        </ul>
+    </nav>
+    <style>
+        .profile-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 30px;
+        }
+
+        .profile-sidebar {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .profile-sidebar .user-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-sidebar .user-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .profile-sidebar .user-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .profile-sidebar .user-email {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .profile-menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .profile-menu li {
+            margin-bottom: 10px;
+        }
+
+        .profile-menu a {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .profile-menu a:hover,
+        .profile-menu a.active {
+            background: #f4f4f4;
+            color: #e60000;
+        }
+
+        .profile-content {
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e60000;
+            padding-bottom: 10px;
+        }
+
+        .order-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .order-details {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .order-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .order-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .order-status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .status-pending {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .status-shipped {
+            background: #28a745;
+            color: white;
+        }
+
+        .status-cancelled {
+            background: #dc3545;
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .save-btn {
+            background: #e60000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="profile-container">
+            <div class="profile-sidebar">
+                <div class="user-info">
+                    <img src="assets/images/user-avatar.jpg" alt="صورة المستخدم" class="user-avatar">
+                    <div class="user-name">محمد أحمد</div>
+                    <div class="user-email">mohamed.ahmed@example.com</div>
+                </div>
+                <ul class="profile-menu">
+                    <li><a href="#" class="active" data-section="personal-info"><i class="fas fa-user"></i> المعلومات الشخصية</a></li>
+                    <li><a href="#" data-section="orders"><i class="fas fa-shopping-bag"></i> طلباتي</a></li>
+                    <li><a href="#" data-section="addresses"><i class="fas fa-map-marker-alt"></i> العناوين</a></li>
+                    <li><a href="#" data-section="settings"><i class="fas fa-cog"></i> الإعدادات</a></li>
+                    <li><a href="home-appliances.html"><i class="fas fa-home"></i> الأجهزة المنزلية</a></li>
+                </ul>
+            </div>
+
+            <div class="profile-content">
+                <div id="personal-info" class="section active">
+                    <h2 class="section-title">المعلومات الشخصية</h2>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>الاسم الأول</label>
+                                <input type="text" value="محمد" required>
+                            </div>
+                            <div class="form-group">
+                                <label>الاسم الأخير</label>
+                                <input type="text" value="أحمد" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>البريد الإلكتروني</label>
+                            <input type="email" value="mohamed.ahmed@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>رقم الهاتف</label>
+                            <input type="tel" value="01234567890" required>
+                        </div>
+                        <button type="submit" class="save-btn">حفظ التغييرات</button>
+                    </form>
+                </div>
+
+                <div id="orders" class="section" style="display:none;">
+                    <h2 class="section-title">طلباتي</h2>
+                    <ul class="order-list">
+                        <li class="order-item">
+                            <div class="order-details">
+                                <img src="assets/images/products/mixer.jpg" alt="خلاط" class="order-image">
+                                <div class="order-info">
+                                    <strong>خلاط كهربائي</strong>
+                                    <span>رقم الطلب: #12345</span>
+                                    <span>التاريخ: 15 ديسمبر 2023</span>
+                                </div>
+                            </div>
+                            <div class="order-status status-shipped">تم الشحن</div>
+                        </li>
+                        <li class="order-item">
+                            <div class="order-details">
+                                <img src="assets/images/products/coffee-maker.jpg" alt="ماكينة قهوة" class="order-image">
+                                <div class="order-info">
+                                    <strong>ماكينة قهوة</strong>
+                                    <span>رقم الطلب: #12346</span>
+                                    <span>التاريخ: 10 ديسمبر 2023</span>
+                                </div>
+                            </div>
+                            <div class="order-status status-pending">قيد المعالجة</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="addresses" class="section" style="display:none;">
+                    <h2 class="section-title">العناوين</h2>
+                    <div class="address-list">
+                        <div class="address-item">
+                            <h3>العنوان الرئيسي</h3>
+                            <p>شارع التحرير، المنصورة، محافظة الدقهلية، مصر</p>
+                            <button class="edit-btn">تعديل</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="settings" class="section" style="display:none;">
+                    <h2 class="section-title">الإعدادات</h2>
+                    <div class="form-group">
+                        <label>تغيير كلمة المرور</label>
+                        <input type="password" placeholder="كلمة المرور الحالية">
+                        <input type="password" placeholder="كلمة المرور الجديدة">
+                        <input type="password" placeholder="تأكيد كلمة المرور">
+                        <button class="save-btn">تغيير كلمة المرور</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.querySelectorAll('.profile-menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const sectionId = this.getAttribute('data-section');
+                
+                // Hide all sections
+                document.querySelectorAll('.section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Remove active class from all menu items
+                document.querySelectorAll('.profile-menu a').forEach(menuLink => {
+                    menuLink.classList.remove('active');
+                });
+                
+                // Show selected section
+                document.getElementById(sectionId).style.display = 'block';
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+</section>
+</section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>عن سويت هوم</h3>
+                <p>أكبر متجر للأدوات المنزلية في مصر</p>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@wx33693" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/wx33693" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/0WX33693" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/wx33_6/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="warranty.html">الضمان وخدمة ما بعد البيع</a></li>
+                    <li><a href="terms-conditions.html">الشروط والأحكام</a></li>
+                    <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="social-responsibility.html">المسؤولية الاجتماعية</a></li>
+                    <li><a href="careers.html">انضم إلينا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="innovation.html">الابتكار والتكنولوجيا</a></li>
+                    <li><a href="partnerships.html">الشراكات والتعاون</a></li>
+                    <li><a href="community-responsibility.html">المسؤولية المجتمعية</a></li>
+                    <li><a href="research-and-development.html">البحث والتطوير</a></li>
+                    <li><a href="digital-transformation.html">التحول الرقمي</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>خدمة العملاء</h3>
+                <ul>
+                    <li><a href="returns-exchange-policy.html">سياسة الإرجاع والاستبدال</a></li>
+                    <li><a href="shipping-policy.html">سياسة الشحن</a></li>
+                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>النشرة البريدية</h3>
+                <p>اشترك علشان توصلك أحدث العروض</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="اكتب إيميلك هنا">
+                    <button type="submit">اشترك</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+        <div class="disclaimer">
+            <p>هذا مجرد مشروع تخرج ولا صله له باي مؤسسه او منشاه باي شكل من الاشكال واي نوع من المنتجات المعروضه به لا يتم استغلالها او استغلال اسم شركتها باي شكل نهائيا.</p>
+            <h4>اسماء المشاركين في المشروع 2024/2025</h4>
+            <ul>
+                <li>مسؤول الاكواد والبرمجه محمد يسري عبد العظيم </li>
+                <li>مسؤول الصور والمونتاج عمرو محمود مصطفى 
+                </li>
+                <li>مسؤول تصفيه البيانات محمد محروس ناصر</li>
+                <li>مسؤول الدعم العام محمد اشرف سعيد</li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة © 2024 سويت هوم</p>
+        </div>
+    </footer>
+
+    <div class="menu-overlay"></div>
+    <script src="script.js"></script>
+    <script src="js/cart-favorites.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/dark-mode.js"></script>
+
+    <!-- بوت المساعدة -->
+    <div class="chat-bot">
+        <button class="chat-bot-toggle" aria-label="فتح المساعد">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>مساعد سويت هوم</h3>
+                <button class="close-chat" aria-label="إغلاق المساعد">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages">
+                <div class="message bot">
+                    مرحباً بك في سويت هوم! كيف يمكنني مساعدتك اليوم؟ 😊
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="اكتب سؤالك هنا..." aria-label="رسالتك">
+                <button class="send-message" aria-label="إرسال">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

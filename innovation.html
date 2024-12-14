@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سويت هوم - Sweet Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body>
+    <!-- شريط الإعلانات العلوي -->
+    <div class="top-banner">
+        <div class="marquee">
+            <span>🔥 عروض حصرية - خصومات تصل لـ 50% على الأجهزة المنزلية</span>
+            <span>🚚 شحن مجاني للطلبات أكتر من 1000 جنيه</span>
+            <span>⭐ ضمان أفضل سعر في السوق</span>
+        </div>
+    </div>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="header-top">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> اتصل بينا: 01025744780</span>
+                <span><i class="fas fa-clock"></i> خدمة العملا 24 ساعة</span>
+            </div>
+            <div class="user-actions">
+                <a href="login.html"><i class="fas fa-user"></i> دخول</a>
+                <span>|</span>
+                <a href="register.html"><i class="fas fa-user-plus"></i> حساب جديد</a>
+                <a href="profile.html"><i class="fas fa-user-plus"></i> الملف الشخصي</a>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="سويت هوم">
+                </a>
+            </div>
+            <div class="search-bar">
+                <form action="/search" method="get">
+                    <input type="text" placeholder="دور على اللي نفسك فيه...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="cart-favorites-container">
+                <div class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                <div class="favorites-icon">
+                    <a href="favorites.html">
+                        <i class="far fa-heart"></i>
+                        <span class="favorites-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <button class="floating-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- إضافة عنصر التعتيم -->
+    <div class="menu-overlay"></div>
+    
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li class="dropdown">
+                <a href="products.html">الأقسام</a>
+                <div class="dropdown-content">
+                    <a href="bedroom-accessories.html">أدوات غرفة النوم</a>
+                    <a href="home-appliances.html">الأجهزة المنزلية</a>
+                    <a href="cleaning-tools.html">أدوات التنظيف</a>
+                    <a href="kitchen-tools.html">أدوات المطبخ</a>
+                    <a href="lighting.html">الإضاءة</a>
+                    <a href="furniture.html">الأثاث</a>
+                </div>
+            </li>
+            <li><a href="warranty.html">الضمان</a></li>
+            <li><a href="contact.html">انضم إلينا</a></li>
+            <li><a href="support.html">مركز المساعدة</a></li>
+        </ul>
+    </nav>
+    <style>
+        .innovation-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .innovation-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .innovation-header h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .innovation-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .innovation-main-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .innovation-section {
+            margin-bottom: 40px;
+        }
+
+        .innovation-section h2 {
+            color: #e60000;
+            border-bottom: 2px solid #e60000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tech-innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .tech-innovation-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .tech-innovation-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .tech-innovation-card i {
+            font-size: 48px;
+            color: #e60000;
+            margin-bottom: 15px;
+        }
+
+        .tech-innovation-card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .smart-home-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .smart-home-features {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .smart-home-feature {
+            flex: 1;
+            padding: 15px;
+        }
+
+        .smart-home-feature i {
+            color: #e60000;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .smart-home-feature h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .smart-home-feature p {
+            color: #666;
+        }
+
+        .innovation-sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            height: fit-content;
+        }
+
+        .tech-product-highlights {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .tech-product-highlights h3 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e60000;
+            padding-bottom: 10px;
+        }
+
+        .tech-product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .tech-product img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-left: 15px;
+        }
+
+        .tech-product-info h4 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .tech-product-info p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .research-highlights {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .research-highlights h3 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e60000;
+            padding-bottom: 10px;
+        }
+
+        .research-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .research-item i {
+            color: #e60000;
+            margin-left: 10px;
+        }
+
+        .get-involved {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .get-involved h3 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e60000;
+            padding-bottom: 10px;
+        }
+
+        .involvement-btn {
+            background: #e60000;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .involvement-btn:hover {
+            background: #cc0000;
+        }
+
+        .contact-innovation {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-innovation h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .contact-btn {
+            background: #e60000;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #cc0000;
+        }
+
+        @media (max-width: 1024px) {
+            .innovation-content {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-innovation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .smart-home-features {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tech-innovation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="innovation-container">
+            <div class="innovation-header">
+                <h1>الابتكار والتكنولوجيا</h1>
+                <p>نبتكر المستقبل من خلال التكنولوجيا المتقدمة</p>
+            </div>
+
+            <div class="innovation-content">
+                <div class="innovation-main-content">
+                    <div class="innovation-section">
+                        <h2>مجالات الابتكار التكنولوجي</h2>
+                        <div class="tech-innovation-grid">
+                            <div class="tech-innovation-card">
+                                <i class="fas fa-robot"></i>
+                                <h3>الذكاء الاصطناعي</h3>
+                                <p>حلول ذكية للمنازل</p>
+                            </div>
+                            <div class="tech-innovation-card">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h3>التطبيقات الذكية</h3>
+                                <p>التحكم عن بعد في الأجهزة</p>
+                            </div>
+                            <div class="tech-innovation-card">
+                                <i class="fas fa-microchip"></i>
+                                <h3>إنترنت الأشياء</h3>
+                                <p>ربط الأجهزة المنزلية</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="innovation-section">
+                        <h2>مميزات المنزل الذكي</h2>
+                        <div class="smart-home-section">
+                            <div class="smart-home-features">
+                                <div class="smart-home-feature">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <h3>التحكم في درجة الحرارة</h3>
+                                    <p>ضبط تلقائي للمناخ</p>
+                                </div>
+                                <div class="smart-home-feature">
+                                    <i class="fas fa-lock"></i>
+                                    <h3>الأمن والسلامة</h3>
+                                    <p>مراقبة وحماية متكاملة</p>
+                                </div>
+                                <div class="smart-home-feature">
+                                    <i class="fas fa-power-off"></i>
+                                    <h3>إدارة الطاقة</h3>
+                                    <p>توفير وترشيد الاستهلاك</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="innovation-section">
+                        <h2>شهادات وجوائز الابتكار</h2>
+                        <div class="tech-innovation-grid">
+                            <div class="tech-innovation-card">
+                                <i class="fas fa-trophy"></i>
+                                <h3>جائزة الابتكار</h3>
+                                <p>أفضل منتج تكنولوجي</p>
+                            </div>
+                            <div class="tech-innovation-card">
+                                <i class="fas fa-award"></i>
+                                <h3>التميز التقني</h3>
+                                <p>جائزة أفضل ابتكار</p>
+                            </div>
+                            <div class="tech-innovation-card">
+                                <i class="fas fa-medal"></i>
+                                <h3>الريادة التكنولوجية</h3>
+                                <p>شهادة التميز العالمي</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="innovation-sidebar">
+                    <div class="tech-product-highlights">
+                        <h3>منتجاتنا المبتكرة</h3>
+                        <div class="tech-product">
+                            <img src="assets/images/products/smart-fridge.jpg" alt="ثلاجة ذكية">
+                            <div class="tech-product-info">
+                                <h4>ثلاجة ذكية</h4>
+                                <p>التحكم عبر الهاتف والتنبؤ بالمخزون</p>
+                            </div>
+                        </div>
+                        <div class="tech-product">
+                            <img src="assets/images/products/smart-ac.jpg" alt="مكيف ذكي">
+                            <div class="tech-product-info">
+                                <h4>مكيف ذكي</h4>
+                                <p>تحكم ذكي في درجة الحرارة</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="research-highlights">
+                        <h3>أبحاثنا الحالية</h3>
+                        <div class="research-item">
+                            <i class="fas fa-flask"></i>
+                            <p>تطوير تقنيات توفير الطاقة</p>
+                        </div>
+                        <div class="research-item">
+                            <i class="fas fa-brain"></i>
+                            <p>الذكاء الاصطناعي في الأجهزة المنزلية</p>
+                        </div>
+                        <div class="research-item">
+                            <i class="fas fa-network-wired"></i>
+                            <p>تحسين اتصال إنترنت الأشياء</p>
+                        </div>
+                    </div>
+
+                    <div class="get-involved">
+                        <h3>كن جزءًا من مستقبلنا</h3>
+                        <p>انضم إلى فريق الابتكار</p>
+                        <button class="involvement-btn">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            تقدم الآن
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-innovation">
+                <h3>هل لديك أفكار مبتكرة؟</h3>
+                <a href="#" class="contact-btn">
+                    <i class="fas fa-envelope"></i>
+                    شاركنا أفكارك
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // زر الانضمام
+        document.querySelector('.involvement-btn').addEventListener('click', function() {
+            alert('شكرًا لاهتمامك بالابتكار. سنتواصل معك قريبًا');
+        });
+
+        // زر التواصل
+        document.querySelector('.contact-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('سيتم توجيهك إلى صفحة مشاركة الأفكار');
+        });
+    </script>
+</body>
+</html>
+</section>
+</section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>عن سويت هوم</h3>
+                <p>أكبر متجر للأدوات المنزلية في مصر</p>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@wx33693" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/wx33693" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/0WX33693" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/wx33_6/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="warranty.html">الضمان وخدمة ما بعد البيع</a></li>
+                    <li><a href="terms-conditions.html">الشروط والأحكام</a></li>
+                    <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+                    <li><a href="social-responsibility.html">المسؤولية الاجتماعية</a></li>
+                    <li><a href="careers.html">انضم إلينا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="innovation.html">الابتكار والتكنولوجيا</a></li>
+                    <li><a href="partnerships.html">الشراكات والتعاون</a></li>
+                    <li><a href="community-responsibility.html">المسؤولية المجتمعية</a></li>
+                    <li><a href="research-and-development.html">البحث والتطوير</a></li>
+                    <li><a href="digital-transformation.html">التحول الرقمي</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>خدمة العملاء</h3>
+                <ul>
+                    <li><a href="returns-exchange-policy.html">سياسة الإرجاع والاستبدال</a></li>
+                    <li><a href="shipping-policy.html">سياسة الشحن</a></li>
+                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>النشرة البريدية</h3>
+                <p>اشترك علشان توصلك أحدث العروض</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="اكتب إيميلك هنا">
+                    <button type="submit">اشترك</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+        <div class="disclaimer">
+            <p>هذا مجرد مشروع تخرج ولا صله له باي مؤسسه او منشاه باي شكل من الاشكال واي نوع من المنتجات المعروضه به لا يتم استغلالها او استغلال اسم شركتها باي شكل نهائيا.</p>
+            <h4>اسماء المشاركين في المشروع 2024/2025</h4>
+            <ul>
+                <li>مسؤول الاكواد والبرمجه محمد يسري عبد العظيم </li>
+                <li>مسؤول الصور والمونتاج عمرو محمود مصطفى 
+                </li>
+                <li>مسؤول تصفيه البيانات محمد محروس ناصر</li>
+                <li>مسؤول الدعم العام محمد اشرف سعيد</li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة © 2024 سويت هوم</p>
+        </div>
+    </footer>
+
+    <div class="menu-overlay"></div>
+    <script src="script.js"></script>
+    <script src="js/cart-favorites.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/dark-mode.js"></script>
+
+    <!-- بوت المساعدة -->
+    <div class="chat-bot">
+        <button class="chat-bot-toggle" aria-label="فتح المساعد">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>مساعد سويت هوم</h3>
+                <button class="close-chat" aria-label="إغلاق المساعد">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages">
+                <div class="message bot">
+                    مرحباً بك في سويت هوم! كيف يمكنني مساعدتك اليوم؟ 😊
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="اكتب سؤالك هنا..." aria-label="رسالتك">
+                <button class="send-message" aria-label="إرسال">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

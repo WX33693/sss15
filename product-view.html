@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سويت هوم - Sweet Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+</head>
+<body>
+    <!-- شريط الإعلانات العلوي -->
+    <div class="top-banner">
+        <div class="marquee">
+            <span>🔥 عروض حصرية - خصومات تصل لـ 50% على الأجهزة المنزلية</span>
+            <span>🚚 شحن مجاني للطلبات أكتر من 1000 جنيه</span>
+            <span>⭐ ضمان أفضل سعر في السوق</span>
+        </div>
+    </div>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="header-top">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> اتصل بينا: 01025744780</span>
+                <span><i class="fas fa-clock"></i> خدمة العملا 24 ساعة</span>
+            </div>
+            <div class="user-actions">
+                <a href="login.html"><i class="fas fa-user"></i> دخول</a>
+                <span>|</span>
+                <a href="register.html"><i class="fas fa-user-plus"></i> حساب جديد</a>
+                <a href="profile.html"><i class="fas fa-user-plus"></i> الملف الشخصي</a>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="سويت هوم">
+                </a>
+            </div>
+            <div class="search-bar">
+                <form action="/search" method="get">
+                    <input type="text" placeholder="دور على اللي نفسك فيه...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="cart-favorites-container">
+                <div class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                <div class="favorites-icon">
+                    <a href="favorites.html">
+                        <i class="far fa-heart"></i>
+                        <span class="favorites-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <button class="floating-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- إضافة عنصر التعتيم -->
+    <div class="menu-overlay"></div>
+    
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li class="dropdown">
+                <a href="products.html">الأقسام</a>
+                <div class="dropdown-content">
+                    <a href="bedroom-accessories.html">أدوات غرفة النوم</a>
+                    <a href="home-appliances.html">الأجهزة المنزلية</a>
+                    <a href="cleaning-tools.html">أدوات التنظيف</a>
+                    <a href="kitchen-tools.html">أدوات المطبخ</a>
+                    <a href="lighting.html">الإضاءة</a>
+                    <a href="furniture.html">الأثاث</a>
+                </div>
+            </li>
+            <li><a href="warranty.html">الضمان</a></li>
+            <li><a href="contact.html">انضم إلينا</a></li>
+            <li><a href="support.html">مركز المساعدة</a></li>
+        </ul>
+    </nav>
+    <style>
+        :root {
+            --primary-color: #e60000;
+        }
+        
+        /* Product View Styles */
+        .product-view-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .product-gallery {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border: 1px solid #eee;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            padding: 20px;
+        }
+
+        .main-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .thumbnails {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 0 10px;
+        }
+
+        .thumbnail {
+            aspect-ratio: 1;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+
+        .thumbnail.active {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+
+        .thumbnail:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-info {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .product-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .product-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .price-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .current-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .old-price {
+            font-size: 20px;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .discount-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .delivery-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .delivery-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .delivery-item:last-child {
+            border-bottom: none;
+        }
+
+        .delivery-icon {
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 20px;
+            box-shadow: 0 2px 8px rgba(230,0,0,0.1);
+        }
+
+        .delivery-text h4 {
+            margin: 0;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .delivery-text p {
+            margin: 5px 0 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .quantity-section {
+            margin: 25px 0;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 150px;
+        }
+
+        .quantity-btn {
+            width: 36px;
+            height: 36px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .quantity-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .quantity-input {
+            width: 60px;
+            height: 36px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .add-to-cart {
+            flex: 1;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+        }
+
+        .wishlist-btn {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #666;
+            transition: all 0.3s;
+        }
+
+        .wishlist-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .product-description {
+            margin-top: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .description-tabs {
+            display: flex;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tab-btn {
+            padding: 20px 30px;
+            border: none;
+            background: none;
+            font-size: 16px;
+            color: #666;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .tab-content {
+            padding: 30px;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #666;
+        }
+
+        .features-list i {
+            color: var(--primary-color);
+        }
+
+        .similar-products {
+            margin-top: 40px;
+        }
+
+        .similar-products h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: #f8f9fa;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-card-content {
+            padding: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+            height: 40px;
+            overflow: hidden;
+            transition: color 0.3s ease;
+        }
+
+        .product-card:hover h3 {
+            color: var(--primary-color);
+        }
+
+        .product-card .price {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        @media (max-width: 992px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .wishlist-btn {
+                width: 100%;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+
+        <div class="product-container">
+            <!-- Product Gallery -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="images/products/washer-main.jpg" alt="غسالة سامسونج">
+                </div>
+                <div class="thumbnails">
+                    <div class="thumbnail active">
+                        <img src="images/products/washer-1.jpg" alt="صورة 1">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="images/products/washer-2.jpg" alt="صورة 2">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="images/products/washer-3.jpg" alt="صورة 3">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="images/products/washer-4.jpg" alt="صورة 4">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <h1 class="product-title">غسالة أوتوماتيك سامسونج - 10 كجم - أبيض - WW10T654DLH</h1>
+                
+                <div class="product-meta">
+                    <span><i class="fas fa-barcode"></i> WW10T654DLH</span>
+                    <span><i class="fas fa-box"></i> متوفر في المخزن</span>
+                </div>
+
+                <div class="price-section">
+                    <span class="current-price">8,999 جنيه</span>
+                    <span class="old-price">10,999 جنيه</span>
+                    <span class="discount-badge">خصم 18%</span>
+                </div>
+
+                <div class="delivery-info">
+                    <div class="delivery-item">
+                        <div class="delivery-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="delivery-text">
+                            <h4>شحن مجاني</h4>
+                            <p>للقاهرة والجيزة</p>
+                        </div>
+                    </div>
+                    <div class="delivery-item">
+                        <div class="delivery-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="delivery-text">
+                            <h4>وقت التوصيل</h4>
+                            <p>2-4 أيام عمل</p>
+                        </div>
+                    </div>
+                    <div class="delivery-item">
+                        <div class="delivery-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="delivery-text">
+                            <h4>ضمان لمدة 5 سنوات</h4>
+                            <p>ضمان الوكيل المعتمد</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantity-section">
+                    <label>الكمية:</label>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        أضف إلى السلة
+                    </button>
+                    <button class="wishlist-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Description -->
+        <div class="product-description">
+            <div class="description-tabs">
+                <button class="tab-btn active" data-tab="description">الوصف</button>
+                <button class="tab-btn" data-tab="specifications">المواصفات</button>
+                <button class="tab-btn" data-tab="delivery">معلومات التوصيل</button>
+            </div>
+
+            <div class="tab-content active" id="description">
+                <p>غسالة سامسونج الأوتوماتيك بسعة 10 كيلو مثالية للعائلات الكبيرة. تتميز بتقنية Eco Bubble للتنظيف العميق وتوفير الطاقة. مع 15 برنامج غسيل متنوع لتناسب جميع أنواع الأقمشة.</p>
+                
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> سعة 10 كيلو</li>
+                    <li><i class="fas fa-check"></i> تقنية Eco Bubble</li>
+                    <li><i class="fas fa-check"></i> شاشة LED رقمية</li>
+                    <li><i class="fas fa-check"></i> 15 برنامج غسيل</li>
+                    <li><i class="fas fa-check"></i> تصنيف الطاقة A+++</li>
+                    <li><i class="fas fa-check"></i> ضمان 5 سنوات</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Similar Products -->
+        <div class="similar-products">
+            <h2>منتجات مشابهة</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <a href="/product-view.html" class="product-link">
+                        <div class="product-image">
+                            <img src="images/products/similar-1.jpg" alt="غسالة إل جي">
+                        </div>
+                        <div class="product-card-content">
+                            <h3>غسالة إل جي أوتوماتيك - 9 كجم</h3>
+                            <div class="price">7,999 جنيه</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="/product-view.html" class="product-link">
+                        <div class="product-image">
+                            <img src="images/products/similar-2.jpg" alt="غسالة توشيبا">
+                        </div>
+                        <div class="product-card-content">
+                            <h3>غسالة توشيبا أوتوماتيك - 8 كجم</h3>
+                            <div class="price">6,999 جنيه</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="/product-view.html" class="product-link">
+                        <div class="product-image">
+                            <img src="images/products/similar-3.jpg" alt="غسالة وايت بوينت">
+                        </div>
+                        <div class="product-card-content">
+                            <h3>غسالة وايت بوينت - 7 كجم</h3>
+                            <div class="price">5,999 جنيه</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="/product-view.html" class="product-link">
+                        <div class="product-image">
+                            <img src="images/products/similar-4.jpg" alt="غسالة فريش">
+                        </div>
+                        <div class="product-card-content">
+                            <h3>غسالة فريش أوتوماتيك - 10 كجم</h3>
+                            <div class="price">8,499 جنيه</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quantity Controls
+        const minusBtn = document.querySelector('.minus');
+        const plusBtn = document.querySelector('.plus');
+        const qtyInput = document.querySelector('.quantity-input');
+
+        minusBtn.addEventListener('click', () => {
+            const currentValue = parseInt(qtyInput.value);
+            if (currentValue > 1) {
+                qtyInput.value = currentValue - 1;
+            }
+        });
+
+        plusBtn.addEventListener('click', () => {
+            qtyInput.value = parseInt(qtyInput.value) + 1;
+        });
+
+        // Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                btn.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Thumbnails
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.querySelector('.main-image img');
+
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+                mainImage.src = thumb.querySelector('img').src;
+            });
+        });
+    </script>
+</body>
+{{ ... }}
+    <script src="js/dark-mode.js"></script>
+{{ ... }}

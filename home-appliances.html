@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سويت هوم - Sweet Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+</head>
+<body>
+    <!-- شريط الإعلانات العلوي -->
+    <div class="top-banner">
+        <div class="marquee">
+            <span>🔥 عروض حصرية - خصومات تصل لـ 50% على الأجهزة المنزلية</span>
+            <span>🚚 شحن مجاني للطلبات أكتر من 1000 جنيه</span>
+            <span>⭐ ضمان أفضل سعر في السوق</span>
+        </div>
+    </div>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="header-top">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> اتصل بينا: 01025744780</span>
+                <span><i class="fas fa-clock"></i> خدمة العملا 24 ساعة</span>
+            </div>
+            <div class="user-actions">
+                <a href="login.html"><i class="fas fa-user"></i> دخول</a>
+                <span>|</span>
+                <a href="register.html"><i class="fas fa-user-plus"></i> حساب جديد</a>
+                <a href="profile.html"><i class="fas fa-user-plus"></i> الملف الشخصي</a>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="سويت هوم">
+                </a>
+            </div>
+            <div class="search-bar">
+                <form action="/search" method="get">
+                    <input type="text" placeholder="دور على اللي نفسك فيه...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="cart-favorites-container">
+                <div class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                <div class="favorites-icon">
+                    <a href="favorites.html">
+                        <i class="far fa-heart"></i>
+                        <span class="favorites-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <button class="floating-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- إضافة عنصر التعتيم -->
+    <div class="menu-overlay"></div>
+    
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li class="dropdown">
+                <a href="products.html">الأقسام</a>
+                <div class="dropdown-content">
+                    <a href="bedroom-accessories.html">أدوات غرفة النوم</a>
+                    <a href="home-appliances.html">الأجهزة المنزلية</a>
+                    <a href="cleaning-tools.html">أدوات التنظيف</a>
+                    <a href="kitchen-tools.html">أدوات المطبخ</a>
+                    <a href="lighting.html">الإضاءة</a>
+                    <a href="furniture.html">الأثاث</a>
+                </div>
+            </li>
+            <li><a href="warranty.html">الضمان</a></li>
+            <li><a href="contact.html">انضم إلينا</a></li>
+            <li><a href="support.html">مركز المساعدة</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>الأجهزة المنزلية</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="sort-section">
+            <span class="sort-label">ترتيب حسب:</span>
+            <select class="sort-select">
+                <option value="newest">الأحدث</option>
+                <option value="price-low">السعر: من الأقل للأعلى</option>
+                <option value="price-high">السعر: من الأعلى للأقل</option>
+                <option value="name-asc">الاسم: أ-ي</option>
+                <option value="name-desc">الاسم: ي-أ</option>
+                <option value="popular">الأكثر شعبية</option>
+            </select>
+        </div>
+
+        <div class="products-wrapper">
+            <aside class="categories-sidebar">
+                <h3>الفئات</h3>
+                <ul class="category-list">
+                    <li><a href="bedroom-accessories.html">أدوات غرفة النوم <span class="count">12</span></a></li>
+                    <li><a href="home-appliances.html">الأجهزة المنزلية <span class="count">12</span></a></li>
+                    <li><a href="cleaning-tools.html">أدوات التنظيف <span class="count">12</span></a></li>
+                    <li><a href="kitchen-tools.html">أدوات المطبخ <span class="count">12</span></a></li>
+                    <li><a href="lighting.html">الإضاءة <span class="count">12</span></a></li>
+                    <li><a href="furniture.html">الأثاث <span class="count">12</span></a></li>
+                </ul>
+            </aside>
+
+            <div class="products-grid">
+                <!-- المنتج 1 -->
+                <div class="product-card">
+                    <a href="product-details.html">
+                        <img src="images/product1.jpg" alt="سرير مودرن">
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title">سرير مودرن مزدوج</h3>
+                        <div class="product-price">2,499 ج.م</div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- المنتج 2 -->
+                <div class="product-card">
+                    <a href="product-details.html">
+                        <img src="images/product2.jpg" alt="مصباح معلق">
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title">مصباح سقف LED معلق</h3>
+                        <div class="product-price">349 ج.م</div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- المنتج 3 -->
+                <div class="product-card">
+                    <a href="product-details.html">
+                        <img src="images/product3.jpg" alt="كنبة مودرن">
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title">كنبة مودرن ثلاثية</h3>
+                        <div class="product-price">3,999 ج.م</div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- المنتج 4 -->
+                <div class="product-card">
+                    <a href="product-details.html">
+                        <img src="images/product4.jpg" alt="طقم أواني">
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title">طقم أواني ستانلس ستيل</h3>
+                        <div class="product-price">799 ج.م</div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- المنتج 5 -->
+                <div class="product-card">
+                    <a href="product-details.html">
+                        <img src="images/product5.jpg" alt="مكنسة كهربائية">
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title">مكنسة كهربائية روبوت</h3>
+                        <div class="product-price">1,999 ج.م</div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- المنتج 6 -->
+                <div class="product-card">
+                    <a href="product-details.html">
+                        <img src="images/product6.jpg" alt="سجادة عصرية">
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title">سجادة عصرية للمنزل</h3>
+                        <div class="product-price">599 ج.م</div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- المنتج 7 -->
+                <div class="product-card">
+                    <a href="product-details.html">
+                        <img src="images/product7.jpg" alt="خلاط كهربائي">
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title">خلاط كهربائي متعدد السرعات</h3>
+                        <div class="product-price">449 ج.م</div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- المنتج 8 -->
+                <div class="product-card">
+                    <a href="product-details.html">
+                        <img src="images/product8.jpg" alt="طاولة طعام">
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title">طاولة طعام خشبية فاخرة</h3>
+                        <div class="product-price">1,799 ج.م</div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- المنتج 9 -->
+                <div class="product-card">
+                    <a href="product-details.html">
+                        <img src="images/product9.jpg" alt="مروحة سقف">
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title">مروحة سقف مع إضاءة LED</h3>
+                        <div class="product-price">899 ج.م</div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- المنتج 10 -->
+                <div class="product-card">
+                    <a href="product-details.html">
+                        <img src="images/product10.jpg" alt="ستائر">
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title">ستائر قماش فاخرة</h3>
+                        <div class="product-price">699 ج.م</div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- المنتج 11 -->
+                <div class="product-card">
+                    <a href="product-details.html">
+                        <img src="images/product11.jpg" alt="مصباح طاولة">
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title">مصباح طاولة LED حديث</h3>
+                        <div class="product-price">159 ج.م</div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+
+                <!-- المنتج 12 -->
+                <div class="product-card">
+                    <a href="product-details.html">
+                        <img src="images/product12.jpg" alt="مرآة جدارية">
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title">مرآة جدارية دائرية</h3>
+                        <div class="product-price">399 ج.م</div>
+                        <button class="add-to-cart">أضف للسلة</button>
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // تفعيل زر المفضلة
+        document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const icon = this.querySelector('i');
+                icon.classList.toggle('fas');
+                icon.classList.toggle('far');
+            });
+        });
+
+        // تفعيل الترتيب
+        document.querySelector('.sort-select').addEventListener('change', function() {
+            // يمكن إضافة منطق الترتيب هنا
+        });
+    </script>
+</body>
+</html>
+
+<!-- الفوتر -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>عن سويت هوم</h3>
+            <p>أكبر متجر للأدوات المنزلية في مصر</p>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@wx33693" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                <a href="https://x.com/wx33693" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/0WX33693" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/wx33_6/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>روابط سريعة</h3>
+            <ul>
+                <li><a href="warranty.html">الضمان وخدمة ما بعد البيع</a></li>
+                <li><a href="terms-conditions.html">الشروط والأحكام</a></li>
+                <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+                <li><a href="social-responsibility.html">المسؤولية الاجتماعية</a></li>
+                <li><a href="careers.html">انضم إلينا</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>روابط سريعة</h3>
+            <ul>
+                <li><a href="innovation.html">الابتكار والتكنولوجيا</a></li>
+                <li><a href="partnerships.html">الشراكات والتعاون</a></li>
+                <li><a href="community-responsibility.html">المسؤولية المجتمعية</a></li>
+                <li><a href="research-and-development.html">البحث والتطوير</a></li>
+                <li><a href="digital-transformation.html">التحول الرقمي</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>خدمة العملاء</h3>
+            <ul>
+                <li><a href="returns-exchange-policy.html">سياسة الإرجاع والاستبدال</a></li>
+                <li><a href="shipping-policy.html">سياسة الشحن</a></li>
+                <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>النشرة البريدية</h3>
+            <p>اشترك علشان توصلك أحدث العروض</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="اكتب إيميلك هنا">
+                <button type="submit">اشترك</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <div class="disclaimer">
+        <p>هذا مجرد مشروع تخرج ولا صله له باي مؤسسه او منشاه باي شكل من الاشكال واي نوع من المنتجات المعروضه به لا يتم استغلالها او استغلال اسم شركتها باي شكل نهائيا.</p>
+        <h4>اسماء المشاركين في المشروع 2024/2025</h4>
+        <ul>
+            <li>مسؤول الاكواد والبرمجه محمد يسري عبد العظيم </li>
+            <li>مسؤول الصور والمونتاج عمرو محمود مصطفى 
+            </li>
+            <li>مسؤول تصفيه البيانات محمد محروس ناصر</li>
+            <li>مسؤول الدعم العام محمد اشرف سعيد</li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة © 2024 سويت هوم</p>
+    </div>
+</footer>
+
+<div class="menu-overlay"></div>
+<script src="script.js"></script>
+<script src="js/cart-favorites.js"></script>
+<script src="js/mobile-menu.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/dark-mode.js"></script>
+
+<!-- بوت المساعدة -->
+<div class="chat-bot">
+    <button class="chat-bot-toggle" aria-label="فتح المساعد">
+        <i class="fas fa-robot"></i>
+    </button>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h3>مساعد سويت هوم</h3>
+            <button class="close-chat" aria-label="إغلاق المساعد">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages">
+            <div class="message bot">
+                مرحباً بك في سويت هوم! كيف يمكنني مساعدتك اليوم؟ 😊
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="اكتب سؤالك هنا..." aria-label="رسالتك">
+            <button class="send-message" aria-label="إرسال">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
